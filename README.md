@@ -11,6 +11,8 @@
 ### 🇰🇷 Korean Version
 
 # 🌊 AI 기반 선박 제어실 보조 On-Device 시스템
+## 🏆 **인텔 엣지 AI 실무 프로젝트 경진대회 최우수상 수상**
+
 <img src="docs/resources/video_gif/01_Dehazing.gif" alt="01_Dehazing.gif" width="800"/>
 <img src="docs/resources/video_gif/03_AD_Dehazing.gif" alt="03_AD_Dehazing.gif" width="800"/>
 <img src="docs/resources/video_gif/04_PE1.gif" alt="04_PE1.gif" width="800"/>
@@ -141,6 +143,8 @@
 ### 🇯🇵 Japanese Version
 
 # 🌊 AIベースの船舶制御室補助On-Deviceシステム
+## 🏆 **Intel Edge AI 実務プロジェクト コンペティション 最優秀賞 受賞**
+
 <img src="docs/resources/video_gif/01_Dehazing.gif" alt="01_Dehazing.gif" width="800"/>
 <img src="docs/resources/video_gif/03_AD_Dehazing.gif" alt="03_AD_Dehazing.gif" width="800"/>
 <img src="docs/resources/video_gif/04_PE1.gif" alt="04_PE1.gif" width="800"/>
