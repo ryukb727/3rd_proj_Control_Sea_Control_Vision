@@ -38,6 +38,7 @@
 ![PyTorch](https://img.shields.io/badge/Framework-PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
 ![YOLO](https://img.shields.io/badge/Model-YOLOv8-FF2B2B?style=for-the-badge&logo=github&logoColor=white)
 ![EfficientNet](https://img.shields.io/badge/Model-EfficientNet-B3-FF6F00?style=for-the-badge&logo=google&logoColor=white)
+![MoveNet](https://img.shields.io/badge/Model-MoveNet-03A9F4?style=for-the-badge&logo=google&logoColor=white)
 ![MQTT](https://img.shields.io/badge/Protocol-MQTT-00B5A1?style=for-the-badge&logo=cloudsmith&logoColor=white)
 ![OpenCV](https://img.shields.io/badge/Library-OpenCV-5C3A00?style=for-the-badge&logo=opencv&logoColor=white)
 ![MariaDB](https://img.shields.io/badge/Database-MariaDB-003B57?style=for-the-badge&logo=mariadb&logoColor=white)
