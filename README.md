@@ -260,7 +260,16 @@
 - **MQTT**を使用した**リアルタイムデータ転送**および**警告発信システム**の構築を補助したことで、新しい通信方式に関して勉強  
 - **STT**と**TTS**を活用した**自動航海日誌作成およびブリーフィング**システムを通じて、**音声認識および合成**の有用性を実感  
 - 実行時の性能確保のための**リアルタイムシステム最適化**の重要性を学ぶ
-    
+
+---
+
+<div align="center">
+<a href="#korean">⬆️ 韓国語バージョン으로 돌아가기 (Go back to Korean Version) ⬆️</a>
+</div>
+
+</div>
+
+---
 ---
 
 <div align="center">
@@ -333,3 +342,12 @@
 | **나지훈** | Server / MQTT / GUI / LLM / STT / TTS |
 | **김찬미** | Pose Estimation / Fall Detection |
 | **이환중** | Object Detection / Anomaly Detection |
+---
+
+<div align="center">
+<a href="#korean">⬆️ 韓国語バージョン으로 돌아가기 (Go back to Korean Version) ⬆️</a>
+</div>
+
+</div>
+
+---
