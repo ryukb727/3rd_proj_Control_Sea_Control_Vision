@@ -18,8 +18,8 @@
 
 ## 💡 1. 프로젝트 개요
 
-본 프로젝트는 **AI 기반 컴퓨터 비전 기술**을 활용하여 해상 환경에서 선박 항해 안전성을 강화하고 효율을 높이기 위한 **선박 제어실 보조 On-Device 시스템**을 개발한 것입니다.
-이 시스템 **안개 속 객체를 실시간으로 탐지**하고, **이상을 감지** 및 **객체 추적, 자세 추정**기술로 선체 안전과 선원 보호를 도모합니다. 또한, **LLM**을 활용하여 **자동 항해 일지 작성과 브리핑**을 제공합니다.
+본 프로젝트는 **AI 기반 컴퓨터 비전 기술**을 활용하여 해상 환경에서 선박 항해 안전성과 효율 향상을 위한 **선박 제어실 보조 On-Device 시스템**입니다.
+이 시스템은 **안개 속 객체를 실시간으로 탐지**하고, **이상을 감지**하며, **객체 추적, 자세 추정**기술로 선체 안전과 선원 보호를 도모합니다. 또한, **LLM**을 활용하여 **자동 항해 일지 작성과 브리핑**을 제공합니다.
 시스템의 핵심 기능으로는 **안개 제거**, **이상 감지**, **낙상 감지**, **자동 항해 일지 작성** 등이 포합됩니다.
 
 ### 📍 전체 시스템 구성
@@ -53,9 +53,9 @@
    - **YOLOX-S**와 **EfficientNet-B3** 모델을 활용해 **이상 객체 탐지** 및 **라벨링** 실시간 수행
 
 - **낙상 감지 및 경고 시스템**: 
-   - **YOLOv8n** 모델로 **갑판 위 선원** 객체 감지
+   - **YOLOv8n** 모델로 **갑판 위 선원** 객체 탐탐지
    - **MoveNet Lightning** 모델로 **선원의 자세를 추정**, **fall down 상태**가 감지되면 서버로 **위험 알림** 전송
-   - 특정 영역을 위험 구역으로 설정하고, 해당 구역에 사람이 있을 경우 **경고** 발
+   - 특정 영역을 위험 구역으로 설정하고, 해당 구역에 사람이 있을 경우 **경고** 발송
 
 - **자동 항해 일지 작성 및 브리핑**:
    - **LLM (대형 언어 모델)**을 활용
@@ -76,7 +76,7 @@
 
 ### 2) **DCP (Dark Channel Prior)** 기법
    - **목표**: 이미지에서 **안개**를 제거하여 더욱 명확한 시야 제공
-   - **기법**: 이미지의 **어두운 채널**을 사용해 안개 농도를 추정하고 복원
+   - **기법**: 이미지의 **어두운 채널**을 사용해 안개 농도를 추정하고 이미지 복원
 
 ### 3) **YOLOX-S & EfficientNet-B3** 모델을 활용한 **이상 감지**
    - **목표**: 실시간으로 **이상 객체** 탐지
@@ -84,7 +84,7 @@
 
 ### 4) **YOLOv8n 모델**을 활용한 **낙상 감지**
    - **목표**: 갑판 위 **선원 객체** 감지 및 **낙상** 상태 감지
-   - **기법**: **YOLOv8n** 모델로 선원을 객체 감지하고, **MoveNet Lightning**으로 자세를 추정하여 낙상 감지
+   - **기법**: **YOLOv8n** 모델로 선원을 객체 탐지하고, **MoveNet Lightning**으로 자세를 추정하여 낙상 감지
 
 ### 5) **LLM**, **STT**, **TTS**를 활용한 **자동 항해 일지 작성 및 브리핑**
    - **목표**: **항해 일지** 자동 작성 및 **브리핑** 제공
@@ -95,7 +95,7 @@
 ## 👨‍💻 5. 역할 및 기여
 
 - **CLAHE 기법**을 사용하여 이미지 향상 → 저조도 환경에서 이상 감지 성능 향상
-- **DCP** 기법을 통해 **안개 제거**→ 해무로 인한 시야 저하를 개선하고, 선체 안전 확보하며 이상 감지 성능 향상
+- **DCP** 기법을 통해 **안개 제거**→ 해무로 인한 시야 저하를 개선하고, 선체 안전 확보, 이상 감지 성능 향상
 - **부팀장**으로서 팀장 부재시 역할을 대행하며 프로젝트의 원활한 진행 지원
 
 ---
@@ -111,10 +111,10 @@
 - 해결: **YOLOv8n**과 **MoveNet Lightning** 최종 선택해 **실시간 구동 가능**한 성능 확보 
 - 결과: **낙상 감지**의 평균 **FPS** 20-25, **CPU 사용률** 70%로 안정적인 성능 구현
 
-### 3) **GPU 사용을 위한 젯슨 나노 호환성 문제**  
-- 원인: **젯슨 나노**에서 **호환성 문제**가 발생하여 **이상 감지 모델**이 구동되지 않음 
+### 3) **젯슨 나노 호환성 문제**  
+- 원인: GPU 사용을 위해 선택한 **젯슨 나노**에서 **호환성 문제**가 발생하여 **이상 감지 모델**이 구동되지 않음 
 - 해결: **CPU 구동**에는 성공했으나, 최종적으로 **PC**에서 모델을 구동하기로 결정
-- 결과: **젯슨 나노 활용 목표**는 완전히 이루지 못했지만, 최종적으로 **PC**에서 안정적인 구동 확보
+- 결과: **젯슨 나노 활용 목표**는 완전히 이루지 못했지만, 최종적으로 **PC**에서 안정적인 성능으로 구동 성공공
 
 ---
 
@@ -140,11 +140,127 @@
 
 ### 🇯🇵 Japanese Version
 
+# 🌊 AIベースの船舶制御室補助On-Deviceシステム
+<img src="docs/resources/video_gif/01_Dehazing.gif" alt="01_Dehazing.gif" width="800"/>
+<img src="docs/resources/video_gif/03_AD_Dehazing.gif" alt="03_AD_Dehazing.gif" width="800"/>
+<img src="docs/resources/video_gif/04_PE1.gif" alt="04_PE1.gif" width="800"/>
+<img src="docs/resources/video_gif/06_Server_SystemLog.gif" alt="06_Server_SystemLog.gif" height="480"/>
 
+## 💡 1. プロジェクト概要
 
+本プロジェクトは、**AIベースのコンピュータービジョン技術**を活用し、海上環境における船舶の航行安全性と効率性の向上を目指した**船舶制御室補助On-Deviceシステム**です。  
+このシステムは、**リアルタイムで霧の中のオブジェクトを検出**し、**異常検知**を実現します。さらに、**オブジェクト追跡、姿勢推定技術**を組み合わせることで、船体および乗員の安全確保を促進します。また、**LLM**を活用し、**自動航海日誌作成とブリーフィング機能**を提供します。  
+システムの主要機能としては、**デハジング（霧画像補正）**、**異常検知**、**転倒検知**、**自動航海日誌作成**などが含まれます。
+
+### 📍 システム全体構成
+![Image](https://github.com/user-attachments/assets/aa3c5641-43c6-497d-b5ac-7b89fd1d8878)
+
+---
+
+## 🛠️ 2. 技術スタック
+
+![RaspberryPi](https://img.shields.io/badge/Hardware-RaspberryPi5-A22846?style=for-the-badge&logo=raspberrypi&logoColor=white)
+![JetsonNano](https://img.shields.io/badge/Hardware-Jetson%20Nano-76B041?style=for-the-badge&logo=nvidia&logoColor=white)
+![IMU Sensor](https://img.shields.io/badge/Hardware-IMU%20Sensor-FF9900?style=for-the-badge&logo=generic&logoColor=white)
+
+![Python](https://img.shields.io/badge/Language-Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![OpenVINO](https://img.shields.io/badge/Framework-OpenVINO-0078D4?style=for-the-badge&logo=intel&logoColor=white)
+![PyTorch](https://img.shields.io/badge/Framework-PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![YOLO](https://img.shields.io/badge/Model-YOLOv8-FF2B2B?style=for-the-badge&logo=github&logoColor=white)
+![EfficientNet](https://img.shields.io/badge/EfficientNet-B3-FF6F00?style=for-the-badge&logo=google&logoColor=white)
+![MoveNet](https://img.shields.io/badge/Model-MoveNet-03A9F4?style=for-the-badge&logo=google&logoColor=white)
+![MQTT](https://img.shields.io/badge/Protocol-MQTT-00B5A1?style=for-the-badge&logo=cloudsmith&logoColor=white)
+![OpenCV](https://img.shields.io/badge/Library-OpenCV-5C3A00?style=for-the-badge&logo=opencv&logoColor=white)
+![MariaDB](https://img.shields.io/badge/Database-MariaDB-003B57?style=for-the-badge&logo=mariadb&logoColor=white)
+![PyQt6](https://img.shields.io/badge/Framework-PyQt6-41C1C1?style=for-the-badge&logo=python&logoColor=white)
+
+---
+
+## 🎯 3. 主要機能
+
+- **デハジングおよび異常検知**:  
+   - **CLAHE手法**および**DCP(Dark Channel Prior)**手法を適用し、画像の霧を除去  
+   - **YOLOX-S**および**EfficientNet-B3**モデルを使用し、**異常物体をリアルタイムで検出・識別**
+
+- **転倒検知および警告システム**:  
+   - **YOLOv8n**モデルで**デッキ上の乗員**を検知  
+   - **MoveNet Lightning**モデルで**乗員の姿勢を推定**し、**転倒状態を検知**した場合、直ちにサーバーへ**危険警報**を送信 
+   - 特定のエリアを危険ゾーンとして設定し、ゾーン内への乗員の立ち入りを検知した場合も**警告を発信**
+
+- **自動航海日誌作成およびブリーフィング**:  
+   - **LLM (大規模言語モデル)**を活用  
+   - **STT (音声認識)**と**TTS (音声合成)**を使用し、乗員からの**音声指示の処理、自動航海日誌の作成、およびブリーフィングの提供**を実現
+
+- **リアルタイムデータ処理**:  
+   - 各モジュールから**MQTT**を通じてデータをリアルタイムでサーバーに送信  
+   - **異常検知**、**転倒検知**、**危険物体検知**などのデータを処理・保存
+   - リアルタイムで処理されたデータは**モニタリングUI**を通じてコントロールルームで即座に確認可能
+
+---
+
+## 📘 4. 技術実装
+
+### 1) **CLAHE (Contrast Limited Adaptive Histogram Equalization)**手法
+   - **目的**: 低照度環境下で画像を改善し、**鮮明な視界**を確保
+   - **手法**: 各画像領域で**局所的なコントラストを強調**することで、低照度時の視認性を向上
+
+### 2) **DCP (Dark Channel Prior)**手法
+   - **目的**: 画像から**霧**を除去し、より明確な視界を提供
+   - **手法**: 画像の**ダークチャネル (暗い部分)**を用いて霧の濃度を推定し、画像を復元
+
+### 3) **YOLOX-S & EfficientNet-B3**モデルを活用した**異常検知**
+   - **目的**: リアルタイムで**異常物体**を検出
+   - **手法**: **YOLOX-S**で候補となる物体を検出し、その後**EfficientNet-B3**モデルで異常物体の種類を識別
+
+### 4) **YOLOv8n**モデルを活用した**転倒検知**
+   - **目的**: デッキ上の**乗員オブジェクト**を検出し、**転倒**状態を検出
+   - **手法**: **YOLOv8n**モデルで乗員を検出し、**MoveNet Lightning**で姿勢を推定して転倒を検出
+
+### 5) **LLM**, **STT**, **TTS**を活用した**自動航海日誌作成およびブリーフィング**
+   - **目的**: **航海日誌**を自動で作成し、**ブリーフィング**を提供
+   - **手法**: **STT**で音声認識、**TTS**でリアルタイムのブリーフィング音声を提供、**LLM**で航海日誌を自動作成
+
+---
+
+## 👨‍💻 5. 担当役割と貢献
+
+- **CLAHE手法**を用いて画像を改善 → 低照度環境での異常検出性能向上
+- **DCP**手法を活用し*霧を除去** → 霧による視界低下を改善し、船体安全を確保、異常検出性能を向上
+- **副チームリーダー**として、チームリーダー不在時に役割を代行し、プロジェクトの円滑な進行をサポート
+
+---
+
+## 🐞 6. トラブルシューティング
+
+### 1) **デハジング（霧画像補正手法）モデルの性能問題**  
+- 原因: 様々な霧除去モデルを試したが、バージョンの互換性や速度の問題で**リアルタイム映像処理**に不適
+- 解決策: **DCP(Dark Channel Prior)**手法を選択し、**迅速で効率的**な霧除去を実装  
+- 結果: **学習不要の手法**でありながら、**安定した性能**かつ**リアルタイム**で霧の除去を実現
+
+### 2) **転倒検知モデルの性能問題**  
+- 原因: 最適化されていないモデルを使用すると、**リアルタイム動作**に問題が発生  
+- 解決策: **YOLOv8n**と**MoveNet Lightning**を最終的に選択し、**リアルタイム動作可能**な性能を確保  
+- 結果: **転倒検知**の平均**FPS** 20-25、**CPU使用率** 70%で安定した性能を実現
+
+### 3) **Jetson Nano互換性の問題**  
+- 原因: GPU活用のための**Jetson Nano**で**互換性の問題**が発生し、**異常検知モデル**作動に問題発生
+- 解決策: **CPUでの動作**には成功したが、最終的にモデルの動作環境をより高性能なPCに変更することを決定  
+- 結果: **Jetson Nanoへの実装目標**は達成できなかったが、最終的に**PC**で安定した動作性能を確保
+
+---
+
+## 📚 7. 学んだこと
+
+- **OpenCV**、**PyTorch**、**YOLO**などAIに関連する多くの知識を習得  
+- 様々な**画像処理手法**(CLAHE、DCPなど)を活用し、**低照度や霧の状態**でも視界を確保するロジックを実装した経験
+- **MQTT**を使用した**リアルタイムデータ転送**および**警告発信システム**の構築を補助したことで、新しい通信方式に関して勉強  
+- **STT**と**TTS**を活用した**自動航海日誌作成およびブリーフィング**システムを通じて、**音声認識および合成**の有用性を実感  
+- 実行時の性能確保のための**リアルタイムシステム最適化**の重要性を学ぶ
+    
+---
 
 <div align="center">
-<a href="#Team">⬇️ Go to Team Version) ⬇️</a>
+<a href="#Team">⬇️ Go to Team Version ⬇️</a>
 </div>
 
 </div>
@@ -153,7 +269,7 @@
 
 <div id="Team">
 
-### Team
+### 🚢 Team
 
 # CTRL SEA CTRL VISION
 
