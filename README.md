@@ -19,6 +19,7 @@
 <img src="docs/resources/screenshot/01_Dehazing.png" alt="01_Dehazing.png" width="800"/>
 <img src="docs/resources/screenshot/02_Dehazing.png" alt="02_Dehazing.png" width="800"/>
 <img src="docs/resources/screenshot/03_Dehazing.png" alt="03_Dehazing.png" width="800"/>
+<img src="docs/resources/screenshot/03_Dehazing.png" alt="03_Dehazing.png" width="800"/>
 
 ## 3. 이상 감지 Anomaly Detection
 
@@ -26,7 +27,7 @@
 <img src="docs/resources/screenshot/04_AD.png" alt="04_AD.png" width="800"/>
 <img src="docs/resources/screenshot/05_AD.png" alt="05_AD.png" width="800"/>
 <img src="docs/resources/video_gif/02_AD_No_Dehazing.gif" alt="02_AD_No_Dehazing.gif" width="800"/>
-<img src="docs/resources/video_gif/03_AD_Dehazing.gif" alt="03_AD_Dehazing.gif" width="800"/>
+<img src="docs/resources/video_gif/01_Dehazing.gif" alt="01_Dehazing.gif" width="800"/>
 
 ## 4. 낙상 감지 Fall Detection
 
